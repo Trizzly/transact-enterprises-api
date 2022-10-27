@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "s9pBDUMElcaNDUhXpWAe6sk/NopAKm8Z/MhX+qdGS4o=",
+  "Source": "api_enterprise",
+  "BasePath": "_content/api_enterprise",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
