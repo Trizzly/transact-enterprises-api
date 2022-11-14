@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "bH1XtxBNhwBOsHViR06QJr3QKGHo5i1Hvm+q18wuhRNciwPAGDI9bb8gTU9Q3IQeFM0Hv6sH11784dAdFStkOQ==",
+  "dgSpecHash": "NFE80rIAPugdHqpdVY+FyuxtnTF+xunnyFLzFgZwlb2ECZGSSYbHxUUCALjXH/2c5vt8gfxOOR4e35aviXSWug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\trisc\\source\\repos\\enterprise\\api_enterprise\\api_enterprise\\api_enterprise.csproj",
+  "projectFilePath": "C:\\Users\\trisc\\source\\repos\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\trisc\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\trisc\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\microsoft.aspnet.webapi.client\\4.0.20710\\microsoft.aspnet.webapi.client.4.0.20710.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\microsoft.aspnet.webapi.core\\4.0.20710\\microsoft.aspnet.webapi.core.4.0.20710.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
-    "C:\\Users\\trisc\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\trisc\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
@@ -63,6 +65,16 @@
     "C:\\Users\\trisc\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 8.1.1 requires AutoMapper (>= 10.1.1 && < 11.0.0) but version AutoMapper 12.0.0 was resolved.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",
