@@ -25,18 +25,18 @@ namespace api_enterprise.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         [SwaggerOperation(Summary = "Obtient l'entreprise selon l'identifiant passé en paramètre.")]
         [SwaggerResponse(200, "OK")]
         [SwaggerResponse(204, "Aucune donnée trouvée.")]
         [SwaggerResponse(500, "Une erreur est survenue au moment de l'obtention des données.")]
-        public ActionResult<EnterpriseResult> GetEnterpiseFromID([Required][SwaggerParameter("Identifier of the enterprise to get.")] int idEnterprise)
+        public ActionResult<EnterpriseResult> GetEnterpiseFromID([Required][SwaggerParameter("Identifier of the enterprise to get.")] int id)
         {
             _logger.LogInformation("Accès au endpoint GetEnterpriseFromID.");
             try
             {
                 var enterprise = _context.Enterprises
-                                 .Where(e => e.RegionId == idEnterprise)
+                                 .Where(e => e.RegionId == id)
                                  .Select(e => new EnterpriseResult
                                  {
                                      Id = e.Id,
@@ -46,10 +46,9 @@ namespace api_enterprise.Controllers
                                      Country = e.Country.CountryName,
                                      Price = e.Price,
                                      Member = e.Member.MemberName
-                                 });
-                var enterprise1 = enterprise.FirstOrDefault();
+                                 }).FirstOrDefault();
 
-                if (enterprise1 != null)
+                if (enterprise != null)
                     return Ok(enterprise);
 
                 return NoContent();
@@ -170,18 +169,18 @@ namespace api_enterprise.Controllers
             }
         }
 
-        [HttpDelete("{Id}")]
+        [HttpDelete("{id}")]
         [SwaggerOperation(Summary = "Deletes an existing enterprise.")]
         [SwaggerResponse(200, "OK")]
         [SwaggerResponse(404, "No data found. Impossible to delete.")]
         [SwaggerResponse(500, "An error occured while attempting to delete data.")]
-        public ActionResult Delete([SwaggerParameter("Unique Enterprisen ID.")][Required] int idEnterprise)
+        public ActionResult Delete([SwaggerParameter("Unique Enterprisen ID.")][Required] int id)
         {
             _logger.LogInformation("Accès au endpoint DeleteEnterprise.");
 
             try
             {
-                var enterprise = _context.Enterprises.Find(idEnterprise);
+                var enterprise = _context.Enterprises.Find(id);
                 if (enterprise == null)
                     return NotFound();
 
