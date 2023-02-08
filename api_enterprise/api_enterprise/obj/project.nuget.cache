@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/cm+Tn4k+BLwnZqos3pnusSu87rD0nq6QLRdcE706v3ZDzwCMyyCtJMUe0JjoDGSwCfBrkZfB8wknvYHbekFRg==",
+  "dgSpecHash": "5YKgJu899vYXaecOuFqgFfEJJK66nUh9MvOcDDVaxB8Obb0z+Vw4vonZBaJmaAOo1jXoUO/HOaTtesqvlJANkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\trisc\\source\\repos\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj",
+  "projectFilePath": "C:\\Users\\trisc\\Documents\\Travail\\transactproj\\transact-enterprises-api\\api_enterprise\\api_enterprise\\enterprises.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\trisc\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\trisc\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "s9pBDUMElcaNDUhXpWAe6sk/NopAKm8Z/MhX+qdGS4o=",
-  "Source": "api_enterprise",
-  "BasePath": "_content/api_enterprise",
+  "Hash": "tm7BV6KlcnyHIhKIruiCZd5hWQ1B3mF0NlVM2P999a8=",
+  "Source": "enterprises",
+  "BasePath": "_content/enterprises",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

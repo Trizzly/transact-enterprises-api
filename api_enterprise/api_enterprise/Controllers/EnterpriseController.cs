@@ -1,6 +1,7 @@
 using api_enterprise.Models;
 using api_enterprise.Models.ResourceModels;
 using AutoMapper;
+using enterprises.Models.ResourceModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Swashbuckle.AspNetCore.Annotations;
@@ -26,10 +27,10 @@ namespace api_enterprise.Controllers
         }
 
         [HttpGet("{id}")]
-        [SwaggerOperation(Summary = "Obtient l'entreprise selon l'identifiant passé en paramètre.")]
+        [SwaggerOperation(Summary = "Obtains the enterprise by the id.")]
         [SwaggerResponse(200, "OK")]
-        [SwaggerResponse(204, "Aucune donnée trouvée.")]
-        [SwaggerResponse(500, "Une erreur est survenue au moment de l'obtention des données.")]
+        [SwaggerResponse(204, "No data found.")]
+        [SwaggerResponse(500, "An error occured while obtaining the data.")]
         public ActionResult<EnterpriseResult> GetEnterpiseFromID([Required][SwaggerParameter("Identifier of the enterprise to get.")] int id)
         {
             _logger.LogInformation("Accès au endpoint GetEnterpriseFromID.");
@@ -62,35 +63,33 @@ namespace api_enterprise.Controllers
 
 
         [HttpGet]
-        [SwaggerOperation(Summary = "Obtient l'entreprise selon l'identifiant passé en paramètre.")]
-        [SwaggerResponse(200, "OK")]
-        [SwaggerResponse(204, "Aucune donnée trouvée.")]
-        [SwaggerResponse(500, "Une erreur est survenue au moment de l'obtention des données.")]
-        public ActionResult<EnterpriseResult> GetEnterpriseFromRegionID([Required] [SwaggerParameter("Region identifier")] int idRegion)
+        [SwaggerOperation(Summary = "Obtains the enterprises matching the passed parameters.")]
+        [SwaggerResponse(200, "OK", typeof(IEnumerable<EnterpriseGetResult>))]
+        [SwaggerResponse(204, "No data found.")]
+        [SwaggerResponse(500, "An error occured while obtaining the data.")]
+        public ActionResult<IEnumerable<EnterpriseGetResult>> GetEnterpriseFromRegionID([FromQuery] EnterpriseGet researchInfo)
         {
-            _logger.LogInformation("Accès au endpoint GetEnterpriseFromRegionID.");
+            _logger.LogInformation("Access to the endpoint GetEnterpriseFromRegionID.");
 
             try
             {
                 var enterprises = _context.Enterprises
-                                 .Where(e=> e.RegionId == idRegion)
-                                 .Select(e=> new EnterpriseResult
+                                 .Select(e => new EnterpriseGetResult
                                  {
                                      Id = e.Id,
                                      Summary = e.Summary,
-                                     Description = e.Description,
-                                     Region = e.Region.RegionName,
-                                     Country = e.Country.CountryName,
-                                     Price = e.Price,
-                                     Member = e.Member.MemberName
+                                     RegionID = e.RegionId,
+                                     Price = e.Price
                                  })
-                                .OrderBy(s => s.Summary)
-                                .ToList();
+                                .Where(s => (s.Summary.Contains(researchInfo.Summary) || researchInfo.Summary == null)
+                                && (s.RegionID == researchInfo.RegionID || researchInfo.RegionID == 0)
+                                && (s.Price == researchInfo.Price || researchInfo.Price == 0))
+                                .OrderBy(e => e.Id);
 
-                if (enterprises != null)
-                    return Ok(enterprises);
+                if (enterprises.Count() == 0)
+                    return NoContent();
 
-                return NoContent();
+                return Ok(enterprises);
             }
             catch (Exception ex)
             {

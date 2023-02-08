@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trisc\\source\\repos\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj": {}
+    "C:\\Users\\trisc\\Documents\\Travail\\transactproj\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trisc\\source\\repos\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj": {
+    "C:\\Users\\trisc\\Documents\\Travail\\transactproj\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trisc\\source\\repos\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj",
+        "projectUniqueName": "C:\\Users\\trisc\\Documents\\Travail\\transactproj\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj",
         "projectName": "api_enterprise",
-        "projectPath": "C:\\Users\\trisc\\source\\repos\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj",
+        "projectPath": "C:\\Users\\trisc\\Documents\\Travail\\transactproj\\transact-enterprises-api\\api_enterprise\\api_enterprise\\api_enterprise.csproj",
         "packagesPath": "C:\\Users\\trisc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trisc\\source\\repos\\transact-enterprises-api\\api_enterprise\\api_enterprise\\obj\\",
+        "outputPath": "C:\\Users\\trisc\\Documents\\Travail\\transactproj\\transact-enterprises-api\\api_enterprise\\api_enterprise\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\trisc\\AppData\\Roaming\\NuGet\\NuGet.Config",

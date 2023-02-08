@@ -10,7 +10,7 @@ namespace api_enterprise.Models
         public string Description { get; set; } = null!;
         public int RegionId { get; set; }
         public int CountryId { get; set; }
-        public int? Price { get; set; }
+        public int Price { get; set; }
         public string? Justification { get; set; }
         public string? VendorFinancing { get; set; }
         public string? VendorImplication { get; set; }

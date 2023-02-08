@@ -20,7 +20,7 @@ namespace api_enterprise.Models.ResourceModels
         public string Description { get; set; } = null!;
         [Required]
         [SwaggerSchema("Price of the enterprise.")]
-        public int? Price { get; set; }
+        public int Price { get; set; }
         [Required]
         [SwaggerSchema("Justification of the seller.")]
         public string? Justification { get; set; }
